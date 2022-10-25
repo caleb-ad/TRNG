@@ -11,11 +11,17 @@ module rng_io(
     
     logic [amount_rng_bits - 1:0] rng_value;
     logic [amount_rng_bits - 1:0] rng_bit;
-    logic enable, ack, rng_bit, bit_ready;
+    logic [amount_rng_bits - 1:0] rng_bit_ready;
+    logic enable, ack, bit_ready;
     
     generate
-        for(genvar i=0; i<amount_rng_bits; i++) trng(.EN(enable), .RANDOM(rng_bit[i]), .BIT_READY(bit_ready), .ACK(ack));
+        for(genvar i=0; i<amount_rng_bits; i++) TRNG(.EN(enable), .RANDOM(rng_bit[i]), .BIT_READY(rng_bit_ready[i]), .ACK(ack));
     endgenerate
+    
+    always_comb begin
+        if(&rng_bit_ready == 1) bit_ready <= 1;
+        else bit_ready <= 0;
+    end
     
     always_ff @(posedge CLK) begin
         ack <= 0;
@@ -26,8 +32,8 @@ module rng_io(
         end else if(bit_ready) begin
             rng_value <= rng_bit;
             ack <= 1;
+            enable <= 0;
         end
-        else if(bit_ready) enable <= 0;
     end
     
     sseg_des dec (
