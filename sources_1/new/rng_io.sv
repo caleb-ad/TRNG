@@ -15,7 +15,7 @@ module rng_io(
     logic enable, ack, bit_ready;
     
     generate
-        for(genvar i=0; i<amount_rng_bits; i++) TRNG(.EN(enable), .RANDOM(rng_bit[i]), .BIT_READY(rng_bit_ready[i]), .ACK(ack));
+        for(genvar i=0; i<amount_rng_bits; i++) TRNG(.EN(enable & ~bit_ready), .RANDOM(rng_bit[i]), .BIT_READY(rng_bit_ready[i]), .ACK(ack));
     endgenerate
     
     always_comb begin
