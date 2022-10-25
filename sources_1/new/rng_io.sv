@@ -11,11 +11,10 @@ module rng_io(
     
     logic [amount_rng_bits - 1:0] rng_value;
     logic [3:0] rng_count;
-    logic rng_bit;
     logic enable, ack, rng_bit, bit_ready;
     
   
-   TRNG trng(.EN(enable), .RANDOM(rng_bit), .BIT_READY(bit_ready), .ACK(ack));
+    TRNG trng(.EN(enable), .RANDOM(rng_bit), .BIT_READY(bit_ready), .ACK(ack));
    
     always_ff @(posedge CLK) begin
         ack <= 0;
