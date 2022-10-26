@@ -8,7 +8,7 @@
     );
     
     parameter CHALLENGE = 13;
-    parameter min_samples = 5;
+    parameter min_samples = 3;
     
     logic CLK1, CLK2;
     logic sample;

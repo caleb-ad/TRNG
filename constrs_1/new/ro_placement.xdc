@@ -121,39 +121,73 @@ set_property IS_SOFT FALSE [get_pblocks RO_23]
 
 create_pblock RO_24
 add_cells_to_pblock [get_pblocks RO_24] [get_cells -quiet [list {genblk1[12].nolabel_line18/ro1}]]
+<<<<<<< HEAD
 resize_pblock [get_pblocks RO_24] -add {SLICE_X4Y24:SLICE_X7Y24}
 set_property IS_SOFT FALSE [get_pblocks RO_24]
 create_pblock RO_25
 add_cells_to_pblock [get_pblocks RO_25] [get_cells -quiet [list {genblk1[12].nolabel_line18/ro2}]]
 resize_pblock [get_pblocks RO_25] -add {SLICE_X4Y23:SLICE_X7Y23}
+=======
+resize_pblock [get_pblocks RO_24] -add {SLICE_X4Y25:SLICE_X7Y25}
+set_property IS_SOFT FALSE [get_pblocks RO_24]
+create_pblock RO_25
+add_cells_to_pblock [get_pblocks RO_25] [get_cells -quiet [list {genblk1[12].nolabel_line18/ro2}]]
+resize_pblock [get_pblocks RO_25] -add {SLICE_X4Y24:SLICE_X7Y24}
+>>>>>>> refs/remotes/origin/master
 set_property IS_SOFT FALSE [get_pblocks RO_25]
 
 
 create_pblock RO_26
 add_cells_to_pblock [get_pblocks RO_26] [get_cells -quiet [list {genblk1[13].nolabel_line18/ro1}]]
+<<<<<<< HEAD
 resize_pblock [get_pblocks RO_26] -add {SLICE_X4Y22:SLICE_X7Y22}
 set_property IS_SOFT FALSE [get_pblocks RO_26]
 create_pblock RO_27
 add_cells_to_pblock [get_pblocks RO_27] [get_cells -quiet [list {genblk1[13].nolabel_line18/ro2}]]
 resize_pblock [get_pblocks RO_27] -add {SLICE_X4Y21:SLICE_X7Y21}
+=======
+resize_pblock [get_pblocks RO_26] -add {SLICE_X4Y23:SLICE_X7Y23}
+set_property IS_SOFT FALSE [get_pblocks RO_26]
+create_pblock RO_27
+add_cells_to_pblock [get_pblocks RO_27] [get_cells -quiet [list {genblk1[13].nolabel_line18/ro2}]]
+resize_pblock [get_pblocks RO_27] -add {SLICE_X4Y22:SLICE_X7Y22}
+>>>>>>> refs/remotes/origin/master
 set_property IS_SOFT FALSE [get_pblocks RO_27]
 
 
 create_pblock RO_28
 add_cells_to_pblock [get_pblocks RO_28] [get_cells -quiet [list {genblk1[14].nolabel_line18/ro1}]]
+<<<<<<< HEAD
 resize_pblock [get_pblocks RO_28] -add {SLICE_X4Y20:SLICE_X7Y20}
 set_property IS_SOFT FALSE [get_pblocks RO_28]
 create_pblock RO_29
 add_cells_to_pblock [get_pblocks RO_29] [get_cells -quiet [list {genblk1[14].nolabel_line18/ro2}]]
 resize_pblock [get_pblocks RO_29] -add {SLICE_X4Y19:SLICE_X7Y19}
+=======
+resize_pblock [get_pblocks RO_28] -add {SLICE_X4Y21:SLICE_X7Y21}
+set_property IS_SOFT FALSE [get_pblocks RO_28]
+create_pblock RO_29
+add_cells_to_pblock [get_pblocks RO_29] [get_cells -quiet [list {genblk1[14].nolabel_line18/ro2}]]
+resize_pblock [get_pblocks RO_29] -add {SLICE_X4Y20:SLICE_X7Y20}
+>>>>>>> refs/remotes/origin/master
 set_property IS_SOFT FALSE [get_pblocks RO_29]
 
 
 create_pblock RO_30
 add_cells_to_pblock [get_pblocks RO_30] [get_cells -quiet [list {genblk1[15].nolabel_line18/ro1}]]
+<<<<<<< HEAD
 resize_pblock [get_pblocks RO_30] -add {SLICE_X4Y18:SLICE_X7Y18}
 set_property IS_SOFT FALSE [get_pblocks RO_30]
 create_pblock RO_31
 add_cells_to_pblock [get_pblocks RO_31] [get_cells -quiet [list {genblk1[15].nolabel_line18/ro2}]]
 resize_pblock [get_pblocks RO_31] -add {SLICE_X4Y17:SLICE_X7Y17}
 set_property IS_SOFT FALSE [get_pblocks RO_31]
+=======
+resize_pblock [get_pblocks RO_30] -add {SLICE_X4Y19:SLICE_X7Y19}
+set_property IS_SOFT FALSE [get_pblocks RO_30]
+create_pblock RO_31
+add_cells_to_pblock [get_pblocks RO_31] [get_cells -quiet [list {genblk1[15].nolabel_line18/ro2}]]
+resize_pblock [get_pblocks RO_31] -add {SLICE_X4Y18:SLICE_X7Y18}
+set_property IS_SOFT FALSE [get_pblocks RO_31]
+
+>>>>>>> refs/remotes/origin/master
