@@ -8,12 +8,12 @@
     );
     
     parameter CHALLENGE = 13;
-    parameter min_samples = 31; //idk
+    parameter min_samples = 4;
     
     logic CLK1, CLK2;
     logic sample;
     logic count;
-    logic [4:0] sample_count = 0;
+    logic [2:0] sample_count = 0;
     logic sample_count_done;
     
     ring_oscillator ro1( .EN(EN), .CHALLENGE(CHALLENGE), .OUT(CLK1));
@@ -26,9 +26,13 @@
             sample_count <= 0;
             sample_count_done <= 0;
             count <= 0;
+        end else begin
+            if(sample_count == min_samples) sample_count_done <= 1;
+            else begin 
+                if(!CLK2) sample_count <= sample_count + 1;
+                else sample_count <= 0;
+            end 
         end
-        if(sample_count >= min_samples) sample_count_done <= 1;
-        else if(!sample_count_done) sample_count <= sample_count + 1; 
     end
     
     always_ff @(posedge sample, posedge ACK) begin
