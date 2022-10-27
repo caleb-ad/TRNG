@@ -24,11 +24,9 @@
         count <= ~count;
         if(BIT_READY) begin
             sample_count <= 0;
-            sample_count_done <= 0;
             count <= 0;
         end else begin
-            if(sample_count == min_samples) sample_count_done <= 1;
-            else begin 
+            if(sample_count < min_samples) begin 
                 if(!CLK2) sample_count <= sample_count + 1;
                 else sample_count <= 0;
             end 
@@ -37,7 +35,7 @@
     
     always_ff @(posedge sample, posedge ACK) begin
         if(ACK) BIT_READY <= 0;
-        else if(sample && ~BIT_READY && sample_count_done) begin
+        else if(sample && ~BIT_READY && (sample_count == min_samples)) begin
             RANDOM <= count;
             BIT_READY <= 1;
         end
